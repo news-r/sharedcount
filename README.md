@@ -10,6 +10,8 @@ devtools::install_github("JohnCoene/sharedcount")
 ```
 ## Functions
 
+Functions that directly call API:
+
 - `sc_set` - Setup your session.
 - `sc_status` - Check API status.
 - `sc_quota` - Check quota allocation.
@@ -18,12 +20,18 @@ devtools::install_github("JohnCoene/sharedcount")
 - `sc_count` - Get share count of URL.
 - `sc_bulk_p` and `sc_bulk_g` - POST bulk URLs and GET their counts.
 
+Convenience funtions:
+
+Since bulk requests (`sc_bulk_p` and `sc_bulk_g`) are not part of the free plan, there is a convience functions for free users to call multiple urls in one function _but multiple calls_.
+
+- `sc_count_n`
+
 ## Example
 
 All functions start with `sc_`, setup your session with `sc_set`.
 
 ``` r
-sc_set("xxXXxxXxxXXxX")
+sc_set(key = "xxXXxxXxxXXxX")
 
 sc_count("https://cran.r-project.org/")
 ```

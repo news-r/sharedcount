@@ -39,6 +39,17 @@
 
   # call
   built <- httr::build_url(parsed)
-  response <- httr::GET(built)
+  response <- tryCatch(httr::GET(built), error = function() NULL)
+  if(is.null(response) && !isTRUE(.get_quiet()))
+    warning("API call ", crayon::red("error"), ", response is NULL.")
   httr::content(response)
+}
+
+.run_check <- function(n){
+  msg <- paste("You are about to use", crayon::red(n), "API calls.\n",
+      "Are you sure you want to proceed? (yes/no)")
+   x <- menu(c("Yes", "No"), graphics = FALSE, title = msg)
+
+  if(x == 2)
+    stop(crayon::red("Not"), " calling API.", call. = FALSE)
 }

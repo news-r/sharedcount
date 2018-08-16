@@ -2,7 +2,8 @@
 #'
 #' Return counts for a URL.
 #'
-#' @param url URL to return counts.
+#' @param url URL to return counts can be \code{list} or \code{vector}.
+#' @param check Set to \code{FALSE} to remoe the prompt.
 #' @param ... Any other options.
 #'
 #' @examples
@@ -10,6 +11,9 @@
 #'
 #' @seealso \code{\link{sc_set}} to setup your session.
 #'
+#' @importFrom utils menu
+#'
+#' @rdname count
 #' @export
 sc_count <- function(url, ...){
   if(missing(url))
@@ -18,6 +22,18 @@ sc_count <- function(url, ...){
   .call_api("", opts = list(url = url, ...))
 }
 
+#' @rdname count
+#' @export
+sc_count_n <- function(url, check = interactive(), ...){
+  if(missing(url))
+    stop("must pass ", crayon::red("url"), call. = FALSE)
+
+  if(isTRUE(check)){
+    .run_check(length(url))
+  }
+
+  lapply(url, .call_api)
+}
 
 #' Bulk
 #'

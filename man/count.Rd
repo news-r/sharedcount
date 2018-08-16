@@ -2,14 +2,19 @@
 % Please edit documentation in R/param.R
 \name{sc_count}
 \alias{sc_count}
+\alias{sc_count_n}
 \title{Count}
 \usage{
 sc_count(url, ...)
+
+sc_count_n(url, check = interactive(), ...)
 }
 \arguments{
-\item{url}{URL to return counts.}
+\item{url}{URL to return counts can be \code{list} or \code{vector}.}
 
 \item{...}{Any other options.}
+
+\item{check}{Set to \code{FALSE} to remoe the prompt.}
 }
 \description{
 Return counts for a URL.
