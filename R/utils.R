@@ -42,8 +42,7 @@
   response <- tryCatch(httr::GET(built), error = function() NULL)
   if(is.null(response) && !isTRUE(.get_quiet()))
     warning("API call ", crayon::red("error"), ", response is NULL.")
-  cnt <- httr::content(response)
-  jsonlite::fromJSON(cnt)
+  httr::content(response)
 }
 
 .run_check <- function(n){
