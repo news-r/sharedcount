@@ -28,10 +28,10 @@ Since bulk requests (`sc_bulk_p` and `sc_bulk_g`) are not part of the free plan,
 
 ## Example
 
-All functions start with `sc_`, setup your session with `sc_set`.
+All functions start with `sc_`, at the exception of the one to setup your session `sharedcount_key`.
 
 ``` r
-sc_set(key = "xxXXxxXxxXXxX")
+sharedcount_key(key = "xxXXxxXxxXXxX")
 
 sc_count("https://cran.r-project.org/")
 ```
