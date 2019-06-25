@@ -3,7 +3,7 @@
 }
 
 .get_key <- function(){
-  K <- getOption("SHAREDCOUNT_API_KEY")
+  K <- Sys.getenv("SHAREDCOUNT_API_KEY")
 
   if(is.null(K))
     stop("missing key, see ", crayon::blue("sc_key"), call. = FALSE)
@@ -12,7 +12,7 @@
 }
 
 .get_quiet <- function(){
-  K <- getOption("SHAREDCOUNT_API_KEY")
+  K <- Sys.getenv("SHAREDCOUNT_API_KEY")
 
   if(is.null(K))
     stop("missing key, see ", crayon::blue("sc_key"), call. = FALSE)

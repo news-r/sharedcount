@@ -3,9 +3,8 @@ Title: SharedCount in R
 Version: 0.0.0.9000
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: SharedCount in R.
-Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: httr, crayon, cli
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

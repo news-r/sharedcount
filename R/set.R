@@ -6,16 +6,16 @@
 #' @param quiet Whether to print helpful messages to the console.
 #'
 #' @examples
-#' sc_set("xXXXXXxxxXXxxX")
+#' sharedcount_key("xXXXXXxxxXXxxX")
 #'
 #' @name set
 #' @export
 sc_set <- function(key, quiet = !interactive()){
 
-  .Deprecated("sharedcount_key")
-
   if(missing(key))
     stop("must pass key", call. = FALSE)
+
+  .Deprecated("sharedcount_key")
 
   options(
     SHAREDCOUNT_API_KEY = key,
@@ -24,10 +24,8 @@ sc_set <- function(key, quiet = !interactive()){
 
   if(!isTRUE(quiet))
     cat(
-      crayon::green(cli::symbol$tick),
-      "Session",
-      crayon::green("successfully"),
-      "set up!"
+      crayon::red(cli::symbol$cross),
+      "Session is not setup properly"
     )
 
 }
@@ -39,7 +37,7 @@ sharedcount_key <- function(key, quiet = !interactive()){
   if(missing(key))
     stop("must pass key", call. = FALSE)
 
-  options(
+  Sys.setenv(
     SHAREDCOUNT_API_KEY = key,
     SHAREDCOUNT_API_QUIET = quiet
   )
