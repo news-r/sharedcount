@@ -6,7 +6,7 @@ R wrapper to the [SharedCount](https://www.sharedcount.com) API.
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("JohnCoene/sharedcount")
+devtools::install_github("news-r/sharedcount")
 ```
 ## Functions
 
