@@ -1,4 +1,4 @@
-![](https://www.sharedcount.com/sharedcount.svg)
+![](https://www.sharedcount.com/logo.svg)
 
 R wrapper to the [SharedCount](https://www.sharedcount.com) API.
 
