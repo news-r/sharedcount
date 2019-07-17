@@ -47,7 +47,7 @@ sharedcount_key <- function(key, quiet = !interactive()){
       crayon::green(cli::symbol$tick),
       "Session",
       crayon::green("successfully"),
-      "set up!"
+      "set up!\n"
     )
 
 }
