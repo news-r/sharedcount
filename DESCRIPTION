@@ -1,7 +1,13 @@
 Package: sharedcount
 Title: SharedCount in R
 Version: 0.0.0.9000
-Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
+Authors@R: 
+    c(person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "jcoenep@gmail.com",
+           comment = c(ORCID = "0000-0002-6637-4107")),
+       person(family = "news-r", role = "cph"))
 Description: SharedCount in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
